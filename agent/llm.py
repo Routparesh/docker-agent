@@ -1,6 +1,6 @@
 import ollama
 
-MODEL = "llama3.1:8b"
+MODEL = "llama3.2:3b"
 
 def ask_llm(prompt: str) -> str:
     response = ollama.chat(
