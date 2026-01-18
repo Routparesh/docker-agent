@@ -1,6 +1,7 @@
-from agent.planner import is_dockerfile_request, plan_devops_action
+from agent.planner import is_dockerfile_request, plan_devops_action, is_question
 from agent.executor import execute
 from agent.dockerfile_generator import generate_dockerfile
+from agent.qa import answer_question
 from rich.console import Console
 
 console = Console()
@@ -12,6 +13,12 @@ while True:
 
     if user_input.lower() in ["exit", "quit"]:
         break
+
+    # 1️⃣ QUESTIONS → ANSWER
+    if is_question(user_input):
+        answer = answer_question(user_input)
+        console.print(answer)
+        continue
 
     # Dockerfile generation
     if is_dockerfile_request(user_input):
