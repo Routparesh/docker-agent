@@ -1,0 +1,16 @@
+{
+  "allowed_tools": [
+    "docker_ps",
+    "docker_logs",
+    "docker_inspect",
+    "docker_exec",
+    "docker_run",
+    "docker_stop",
+    "docker_build"
+  ],
+  "denied_tools": [
+    "docker_rm",
+    "docker_prune",
+    "docker_system_prune"
+  ]
+}
